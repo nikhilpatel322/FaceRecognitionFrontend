@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.attendance-dashboard {
+  padding: 2rem;
+  background-color: var(--gray-100);
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-back {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.dashboard-header h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.year-selector {
+  min-width: 150px;
+}
+
+.date-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.date-filters .form-control {
+  min-width: 150px;
+  background-color: var(--white);
+}
+
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.month-card {
+  background-color: var(--white);
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.month-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.month-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.month-days {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.month-card:hover .month-days {
+  color: var(--gray-200);
+}
+
+.dashboard-content {
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.table-container {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem;
+}
+
+.attendance-table th {
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  font-weight: 600;
+  text-align: center;
+  padding: 0.75rem;
+  border-bottom: 2px solid var(--gray-200);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-width: 40px;
+}
+
+.attendance-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-700);
+  min-width: 40px;
+}
+
+.day-column {
+  font-size: 0.75rem;
+}
+
+.attendance-cell {
+  font-family: 'Inter', monospace;
+  font-size: 0.875rem;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: var(--gray-50);
+}
+
+@media (max-width: 768px) {
+  .attendance-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .date-filters {
+    flex-direction: column;
+  }
+
+  .date-filters .form-control {
+    width: 100%;
+  }
+
+  .months-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .month-card {
+    padding: 1rem;
+  }
+
+  .month-name {
+    font-size: 1.1rem;
+  }
+}
